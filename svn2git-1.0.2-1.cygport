@@ -1,0 +1,14 @@
+GIT_URI="git://gitorious.org/svn2git/svn2git.git"
+GIT_TAG=${PV}
+inherit git qt4-qmake
+
+
+HOMEPAGE="http://gitorious.org/svn2git/svn2git"
+
+src_install() {
+	dobin ${B}/svn-all-fast-export.exe
+	dosym svn-all-fast-export.exe /usr/bin/svn2git
+
+	insinto /usr/share/${PN}/samples
+	doins ${S}/samples/*.rules
+}

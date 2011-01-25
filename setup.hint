@@ -1,0 +1,4 @@
+category: Devel
+requires: libapr1 libgcc1 libQtCore4 libstdc++6 git subversion
+sdesc: "Converts Subversion repositories to Git"
+ldesc: "Importer for one time conversion from svn to git."
