@@ -2,13 +2,19 @@ GIT_URI="git://gitorious.org/svn2git/svn2git.git"
 GIT_TAG=${PV}
 inherit git qt4-qmake
 
-
+NAME="svn2git"
+VERSION=1.0.2
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="Converts Subversion repositories to Git"
+DESCRIPTION="Importer for one time conversion from svn to git."
+REQUIRES="git"
 HOMEPAGE="http://gitorious.org/svn2git/svn2git"
 
 src_install() {
 	dobin ${B}/svn-all-fast-export.exe
 	dosym svn-all-fast-export.exe /usr/bin/svn2git
 
-	insinto /usr/share/${PN}/samples
+	insinto /usr/share/${NAME}/samples
 	doins ${S}/samples/*.rules
 }
